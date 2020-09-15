@@ -1,7 +1,7 @@
 <!--
  * @Since: 2020-09-14 19:51:43
  * @LastAuthor: Yixuan
- * @LastTime: 2020-09-14 20:24:59
+ * @LastTime: 2020-09-15 11:49:26
 -->
 <template>
   <Preview />
@@ -25,6 +25,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
