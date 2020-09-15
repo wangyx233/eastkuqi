@@ -1,7 +1,7 @@
 <!--
  * @Since: 2020-09-15 14:46:12
  * @LastAuthor: Yixuan
- * @LastTime: 2020-09-15 19:18:50
+ * @LastTime: 2020-09-16 01:55:58
 -->
 <template>
   <div>
@@ -39,13 +39,24 @@ export default {
   name: "Building",
   props: {
     data: Object,
+    max: Number,
   },
   methods: {
     add: function (room) {
+      let max = this.max;
+      this.data.value.floor.forEach((elem) => {
+        elem.room.forEach((r) => {
+          if (r.selected) {
+            max = Math.max(max, r.order);
+          }
+        });
+      });
+      room.order = max + 1;
       room.selected = true;
     },
     remove: function (room) {
       room.selected = false;
+      delete room.order;
     },
   },
 };

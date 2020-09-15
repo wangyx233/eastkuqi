@@ -1,7 +1,7 @@
 /*
  * @Since: 2020-09-15 16:05:21
  * @LastAuthor: Yixuan
- * @LastTime: 2020-09-15 20:02:22
+ * @LastTime: 2020-09-15 22:57:33
  */
 const data = {};
 
@@ -30,6 +30,10 @@ const getData = (building, high, roomInfo) => {
     floor
   }
 }
+getData(3, 4, {
+  count: 5,
+  sp: [5]
+})
 getData(4, 4, {
   count: 5,
   sp: [1]

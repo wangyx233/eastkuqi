@@ -1,7 +1,7 @@
 <!--
  * @Since: 2020-09-15 16:59:43
  * @LastAuthor: Yixuan
- * @LastTime: 2020-09-15 20:01:57
+ * @LastTime: 2020-09-16 01:37:45
 -->
 <template>
   <div>
@@ -14,7 +14,7 @@
       <tbody>
         <tr v-for="(item, index) in current" :key="item.id">
           <td>{{index + 1}}</td>
-          <td>{{item.symbol.build}}号楼-{{item.symbol.layer}}层-{{item.symbol.room}}</td>
+          <td>{{item.symbol.build}}号楼-{{item.symbol.layer}}层-{{item.symbol.room}}-{{item.symbol.kind}}</td>
           <td>
             <button @click="up(index)" v-if="index !== 0">上移</button>
             <button @click="down(index)" v-if="index !== current.length - 1">下移</button>
@@ -57,14 +57,16 @@ export default {
     },
     remove: function (item) {
       item.r.selected = false;
+      delete item.r.order;
       this.current = this.current.filter((elem) => elem.r.selected);
     },
     download: function () {
+      console.log(this.current);
       let data = [["序号", "房间号"]];
       this.current.forEach((elem, index) => {
         data.push([
           index + 1,
-          `${elem.symbol.build}号楼-${elem.symbol.layer}层-${elem.symbol.room}`,
+          `${elem.symbol.build}号楼-${elem.symbol.layer}层-${elem.symbol.room}-${elem.symbol.kind}`,
         ]);
       });
       let content = "";
