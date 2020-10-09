@@ -1,19 +1,24 @@
 <!--
  * @Since: 2020-09-14 19:51:43
  * @LastAuthor: Yixuan
- * @LastTime: 2020-09-15 11:49:26
+ * @LastTime: 2020-10-09 15:01:47
 -->
 <template>
-  <Preview />
+  <div>
+    <Preview />
+    <Icp />
+  </div>
 </template>
 
 <script>
 import Preview from "./components/Preview.vue";
+import Icp from "./components/Icp.vue";
 
 export default {
   name: "App",
   components: {
     Preview,
+    Icp,
   },
 };
 </script>

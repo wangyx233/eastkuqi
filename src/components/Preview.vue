@@ -1,7 +1,7 @@
 <!--
  * @Since: 2020-09-14 20:17:22
  * @LastAuthor: Yixuan
- * @LastTime: 2020-09-16 01:49:33
+ * @LastTime: 2020-10-09 15:03:15
 -->
 <template>
   <div>
@@ -14,7 +14,8 @@
             :key="item.key"
             @click="clickBuilding(item)"
             :class="{ active: item.key === current.key }"
-          >{{item.key}}号楼</span>
+            >{{ item.key }}号楼</span
+          >
           <button @click="show()">查看已选房源</button>
         </div>
         <Building :data="current" :max="maxOrder" />
@@ -112,6 +113,7 @@ export default {
   display: flex;
   align-items: center;
   padding: 16px;
+  min-height: calc(100vh - 32px);
 }
 .container > img {
   width: 50%;
